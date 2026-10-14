@@ -39,13 +39,6 @@ o HEAD desprendido que en palabras simples significa que no estamos sobre ningun
 Algo asi como un modo lectura. 
 
 
-Funciona de la siguiente manera.
-
-1. Modifica el espacio de trabajo. Es decir, reempleza el archivo 
-por su version antigua. (la del commit especificado)
-
-2. Lo prepara en el Staging Area (Index): El archivo se
- marca automáticamente como "listo para commit" (staged).
 
 Cualquier cambio que se haga en ese estado quedara desprendido de cualquier rama, para unirlo
 se puede fusionar a la rama que necesitemos mediante git merge.

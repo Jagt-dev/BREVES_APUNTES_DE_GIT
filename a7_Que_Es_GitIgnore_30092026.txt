@@ -17,7 +17,7 @@ no hace una copia para miles de archivos generados automaticamente por ciertas
 librerias o tecnologias.
 
 2) Como usualmente nuestros repositorios estaran en la nube
-es muy inseguro subir datos sensibles de bases datos o claves
+es muy inseguro subir datos sensibles como bases datos o claves
 privadas.
 
 COMO USARLO

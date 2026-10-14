@@ -35,11 +35,6 @@ tenemos el contenido. Con git merge traemos todos esos cambios
 a la rama main.
 
 
-
-
-
-
-
 --RECPITULACIONES:
 
 crear una nueva rama: git branch <nombre_de_la_rama>

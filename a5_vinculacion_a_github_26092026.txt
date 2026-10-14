@@ -17,7 +17,7 @@ tema: Como vincular un repositorio local con otro alojado en GITHUB.
 
 4.Dirigirse a "github.com > Settings > SSH and GPG keys > New SSH key"
 
-5. Poner un titulo: "Laptop Fedora"
+5. Poner un titulo cualquiera que idenfique de quien es la conexion: "Laptop Fedora"
 
 6. Pegar la clave publica donde se indica.
 
@@ -38,7 +38,7 @@ tema: Como vincular un repositorio local con otro alojado en GITHUB.
 10. Vincular el repositorio local con el de GitHub
 	git remote add origin git@github:usuario/nombrerpo.git
 
-11. Subir los archivos por primera vez
+11. Asociamos el origen que agregamos en el comando anterior con la rama de preferencia. 
 	git push -u origin main
 
 	EXPLICACION:

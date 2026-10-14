@@ -8,7 +8,7 @@ tema: clonar repositorios
 
 Clonar un repositorio es simplemente crear una copia exacta
 y completa de un proyecto guardado en un servidor remoto
-comumente "GIT HUB". Esta copia se descarga y se aloja
+como "GIT HUB". Esta copia se descarga y se aloja
 en la maquina donde se ejecuto la accion.
 
 Git Hub permite descargar repositorios mediante un archivo .zip
@@ -89,14 +89,19 @@ git add .
 git commit -m "Nueva Rama, nueva carpeta para js y primer linea de codigo"
 
 # 7. Sube su nueva rama al repositorio de Byron
-# (No necesita 'git remote add' porque el clon ya creó el puente)
+# (No necesita 'git remote add' porque el clon ya creó el puente) solamente es de enlazar dicho puente u origen a la rama de preferencia (FUNCIONALIDADES)
 git push -u origin FUNCIONALIDADES
 
-Una vez que Jese hace el git push, en la página del repositorio aparecerá un botón verde que dice "Compare & pull request". Jese o Byron hacen clic ahí para abrir la solicitud de revisión, verificar que el código está bien y fusionar la rama FUNCIONALIDADES dentro de main.
 
+Una vez que Jese hace el git push, en la página del repositorio
+aparecerá un botón verde que dice "Compare & pull request". Jese o Byron hacen 
+clic ahí para abrir la solicitud de revisión, verificar que el código está bien y
+fusionar la rama FUNCIONALIDADES dentro de main.
 
+OTRA FORMA DE CLONAR ES HACERLO LOCALMENTE:
 
 Ejemplo de clonacion local:
+git clone <repositorio_origen> <carpeta_cualquiera>
 
 git clone repo_02102026_practica repo_06102026_practica
 
