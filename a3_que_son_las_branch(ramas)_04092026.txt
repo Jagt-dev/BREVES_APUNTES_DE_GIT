@@ -5,11 +5,9 @@ apuntes 04-09-2026
 tema: Que son las bifurcaciones
 ==========================
 
-Las ramas son copias exactas que podemos realizar sobre
-una version en especifico del repositorio. Recordemos 
-que las versiones se identifican como commits, asique
-podemos duplicar uno de ellos y darles un nombre diferente
-para que los proximos cambios afecten esa copia.
+Las ramas o branch son simplemente especios de trabajo independientes
+que permiten realizar cambios sin afectar el proyecto principal. Cada vez
+que se crea una los commit estaran asociados a dicha rama.
 
 
 

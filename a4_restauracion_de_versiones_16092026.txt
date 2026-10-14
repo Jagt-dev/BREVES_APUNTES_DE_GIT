@@ -7,7 +7,7 @@ tema: Como restaurar archivos fisicos o regresar a una version.
 ========================== 
 
 
-Existen dos formas de regresar en el tiempo dentro de una rama:
+Existen tres formas de regresar en el tiempo dentro de una rama:
 
 --- HARD ---
 con el comando: 
@@ -23,26 +23,20 @@ con el comando:
 git reset {ID_COMMIT} --soft
 
 igualmente regresamos a la version del commit que especificamos, pero
-conservamos los cambios hayamos agregado en el stagging area.
+conservamos los cambios que hayamos agregado en el stagging area.
 
 
-(usar los comandos con precaucion)
-
--------- registro de los cambios -------
-muestra un resumen de los cambios realizados dentro de los archivos en cada commit:
-git log  --stat
-
--------- REVISAR LOS CAMBIOS ESPECIFICOS ENTRE ARCHIVOS Y COMMIT -----
-
-git diff <commit_antiguo> <commit_nuevo> -- <ruta/al/archivo>
+NOTA: los cambios son contundentes, asique hay que usarlos con precaucion.
 
 
------------------------------------------------
-Una forma de traer los archivos de un commit especifico
-es usando el comando "git checkout <id_commit> <archivo>"
-lo que hace es literalmente restaurar el archivo
-a un commit(version) anterior. Si no se especifica el archivo
-todo el repositorio regresa a dicha version.
+--- checkout ---
+con el comando:
+git <id_commit_viejo> <archivo> ó git <id_commit_viejo>
+
+Podemos hacer diferentes cosas, una de ellas es regresar al pasado (ir a una version)
+sin afectar absolutamente nada. Git Lo que hace es dejarnos en un estado llamdo "Detached HEAD"
+o HEAD desprendido que en palabras simples significa que no estamos sobre ninguna rama.
+Algo asi como un modo lectura. 
 
 
 Funciona de la siguiente manera.
@@ -52,10 +46,28 @@ por su version antigua. (la del commit especificado)
 
 2. Lo prepara en el Staging Area (Index): El archivo se
  marca automáticamente como "listo para commit" (staged).
+
+Cualquier cambio que se haga en ese estado quedara desprendido de cualquier rama, para unirlo
+se puede fusionar a la rama que necesitemos mediante git merge.
+
+Por ultimo para regresar al presente podemos usar nuevamente git checkout pero apuntando 
+a la rama principal en lugar de un id_commit (por eso checkout hace varias cosas):
+
+    -> git checkout main
+
+
+-------- registro de los cambios -------
+muestra un resumen de los cambios realizados dentro de los archivos en cada commit:
+git log  --stat
+
+-------- REVISAR LOS CAMBIOS ESPECIFICOS ENTRE ARCHIVOS Y COMMIT -----
+
+git diff <commit_antiguo> <commit_nuevo> -- <ruta/al/archivo>
+
  
 
 =========================================================
-resumen:
+algunos comandos:
 
 
 +------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+

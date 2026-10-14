@@ -74,7 +74,7 @@ git diff -> Compara las diferecias entre dos versiones distintas usando como par
 
 	Interpretacion:
 
-	1) (-) significa que ese cambio desapareci o se sustituyo
+	1) (-) significa que ese cambio desaparecio o se sustituyo
 	2) (+) significa que ese cambio se establecio como sustituto de otro. Ejemplo:
 
 		#Se cambio "tengo 21 años" por "tengo 21 años de edad"		
@@ -88,9 +88,5 @@ git diff -> Compara las diferecias entre dos versiones distintas usando como par
 
 
 	
-	 
-
-
-
-
-Para ver las diferencias en un archivo especifico usar: git diff <id commit 1><id commit 2> -- <archivo>
+	Para ver las diferencias en un archivo especifico usar: 
+		git diff <id commit 1><id commit 2> -- <archivo>
