@@ -1,0 +1,87 @@
+==========================
+GIT y GIT HUB
+apuntes 04-09-2026
+
+tema: Que son las bifurcaciones
+==========================
+
+Las ramas son copias exactas que podemos realizar sobre
+una version en especifico del repositorio. Recordemos 
+que las versiones se identifican como commits, asique
+podemos duplicar uno de ellos y darles un nombre diferente
+para que los proximos cambios afecten esa copia.
+
+
+
+ILUSTRACION
+|----------------------------------------------------------------------------------------------------------------------------------------------
+| 																	      |
+| 																	      |
+|       master     ____________(*)____________________(*)_______________________________(*)_____________(*)_____________(*)                   |
+| (rama por defecto)      V1 - 1er commit         V2 - 2do commit                 Vfinal - 3er commit   Final          HEAD                   |
+| 				                     |                                   |              |               |                     |
+| 				      	             |       				 |              |               |                     |
+| 				      		     |					 |            merge             |                     |
+|     experimentos                                  (*)---------------(*)--------------- | -------------|---------------merge                 |
+|  (rama creada "Dev")                              V1 - 1er commit  Vfinal - 2do commit |              |                                     |
+|  											 |              |                                     |
+| 											 |              |                                     |
+| 											 |	        |	                              |
+|       HOT FIX                                                                         (*)____________(*)                                    |
+|     (Bug Fixing)							        V1 - 1er commit     V2 - 2do commit                           |
+|																	      |
+|																	      |
+|----------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+Tecnicamente son:
+Punteros móviles que apuntan a un commit específico. Nos
+permiten desviar el flujo de trabajo principal para crear
+funcionalidades o arreglar errores en aislamiento.
+
+
+En lugar de duplicar los archivos fisicamente lo que hace realmente git
+es crear una referencia  ligera para que los proximos cambios se guarden en este nuevo 
+flujo sin alterar la rama principal.
+
+--------------------------------------------
+FORMA DE CREAR RAMAS
+--------------------------------------------
+
+
+1. Se usa el modelo FEATURE BRANCHES
+
+
+
+--------------------------------------------
+COMANDOS BASICOS
+--------------------------------------------
+
+1. Como crear una rama
+	git branch <nombre_de_la_rama>
+
+2.Como moverse entre ramas:
+	git switch <nombre_de_la_rama>
+
+3.Como hacer los dos comandos anteriores al mismo tiempo:
+	git switch -c <nombre_de_la_rama>
+	
+	tambien:
+	git checkout -b <nombre_de_la_rama>
+4.Como cambiar el nombre de un rama:
+	4.1. Si estamos en una rama diferente
+		git branch -git branch -m nombre-antiguo nuevo-nombre
+	4.2 Si estamos en la misma rama
+		git branch -m nuevo-nombre
+
+
+
+
+
+
+
+
+
+
+
+

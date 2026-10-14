@@ -1,0 +1,106 @@
+==========================
+GIT y GIT HUB
+apuntes 26-09-2026
+
+tema: clonar repositorios
+==========================
+
+
+Clonar un repositorio es simplemente crear una copia exacta
+y completa de un proyecto guardado en un servidor remoto
+comumente "GIT HUB". Esta copia se descarga y se aloja
+en la maquina donde se ejecuto la accion.
+
+Git Hub permite descargar repositorios mediante un archivo .zip
+o con la mencionada clonacion, pero la diferencia entre estos dos 
+metodos es que la clonacion descarga todo el historial de cambios,
+las ramas (branches) y las configuraciones de git. Mientras que el
+archivo .zip solo contiene los archivos basicos.
+
+Gracias a la clonacion se puede configurar un entorno de trabajo
+listo para continuar realizando commits.
+
+
+Ejemplo de un flujo normal en git:
+
+#PART1 usuario A:
+# 1. Crea la carpeta y los archivos iniciales
+mkdir PAGINA-WEB && cd PAGINA-WEB
+touch index.html style.css app.js
+
+# 2. Configura su identidad global (si no lo ha hecho)
+git config --global user.name "Byron Solis"
+git config --global user.email "byrons@gmail.com"
+git config --global init.defaultBranch main
+
+# 3. Inicializa el repositorio local y hace el primer commit
+git init
+git add .
+git commit -m "Primer Commit"
+
+# 4. Genera su clave SSH
+ssh-keygen -t ed25519 -C "byrons@gmail.com"
+cat ~/.ssh/id_ed25519.pub  # Copia el texto devuelto
+ 
+
+En GitHub (Cuenta de Byron):
+1. Va a Settings > SSH and GPG keys > New SSH key, la nombra "Desktop Ubuntu" y pega su clave pública.
+2. Crea un repositorio vacío llamado PROYECTO_PAGINA_WEB (sin README ni .gitignore).
+De vuelta en su terminal:
+
+# 5. Vincula su carpeta local con GitHub y sube el código
+git remote add origin git@github.com:byrons/PROYECTO_PAGINA_WEB.git
+git push -u origin main
+
+# PARTE 2: La invitación (Paso obligatorio en GitHub)
+Antes de que el Usuario B haga algo en su terminal, Byron debe darle acceso al repositorio:
+1. Byron entra a la página de su repositorio en GitHub.
+2. Va a Settings (del repositorio, no de su cuenta) > Collaborators > Add people.
+3. Busca a Jese Gaitan (por su usuario o correo) y le envía la invitación.
+4. Jese revisa su correo electrónico o sus notificaciones de GitHub y acepta la invitación.
+
+#PARTE 3 USUARIO B (YO)
+# 1. Configura su propia identidad
+git config --global user.name "Jese Gaitan"
+git config --global user.email "jagt@gmail.com"
+
+# 2. Genera su propia clave SSH
+ssh-keygen -t ed25519 -C "jagt@gmail.com"
+cat ~/.ssh/id_ed25519.pub  # Copia el texto devuelto
+
+En GitHub (Cuenta de Jese):
+1. Jese va a su propia cuenta en Settings > SSH and GPG keys > New SSH key, la nombra "Jese Fedora" y pega su clave pública.
+
+Devuelta en la terminal de Jese:
+# 3. Clona el proyecto directamente (Git crea la carpeta automáticamente)
+git clone git@github.com:byrons/PROYECTO_PAGINA_WEB.git
+cd PROYECTO_PAGINA_WEB
+
+# 4. Crea una rama para trabajar de forma segura
+git checkout -b FUNCIONALIDADES
+
+# 5. Realiza los cambios en el código
+mkdir js
+mv app.js js/
+echo "//primer comentario" >> js/app.js
+
+# 6. Registra sus cambios localmente
+git add .
+git commit -m "Nueva Rama, nueva carpeta para js y primer linea de codigo"
+
+# 7. Sube su nueva rama al repositorio de Byron
+# (No necesita 'git remote add' porque el clon ya creó el puente)
+git push -u origin FUNCIONALIDADES
+
+Una vez que Jese hace el git push, en la página del repositorio aparecerá un botón verde que dice "Compare & pull request". Jese o Byron hacen clic ahí para abrir la solicitud de revisión, verificar que el código está bien y fusionar la rama FUNCIONALIDADES dentro de main.
+
+
+
+Ejemplo de clonacion local:
+
+git clone repo_02102026_practica repo_06102026_practica
+
+NOTA: por defecto los dos repositorio se quedan vinculados asique para cortar esa conexion usamos
+en el repo clonado:
+
+git remote remove origin

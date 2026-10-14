@@ -1,0 +1,112 @@
+=====================
+GIT y GIT HUB
+apuntes 03-09-2026
+
+tema: introduccion a git.
+=====================
+
+
+---Git-----
+Es un software para controlar las versiones en los archivos, generalmente se usa en proyectos de software
+donde trabajan el mismo documento de texto (codigo) 
+
+* Guarda un historial de cambios para compararlos o revertirlos.
+* Permite el trabajo en equipo.
+* Facilita crear ramas independientes para desarrollar funcionalidades nuevas sin afectar el trabajo principal o el de los demas.
+
+---Repositorio---
+En palabras sencilas es un espacio virtual donde se guarda el proyecto y su todo su historial de cambios, pero tecnicamente ES una 
+base de datos de versiones alojada en un archivo llamado ".git".
+
+---Tipos de Repositorios---
+	-> Repositorio Local: Simplemente es el mencionado espacio virtual alojado en nuestra computadora.
+
+	-> Repositorio Remoto Es lo mismo pero alojado en un servidor u otra computadora que tiene la funcion
+	de tener alojado el repositorio centralizadamente.
+
+
+---Estados de git---
+	-> Modified: Significa que el archivo fue cambiado, pero esos cambios aun no han sio preparados para guardarse en el
+			historial de git.
+	-> Staged: Significa que los cambios fueron seleccionados para formar parte del proximo commit mediante "git add"
+
+	-> Commited: Significa que los cambios ya fueron guardados permanentemente en el historial del repositorio
+		usando git commit.
+
+====================
+comandos basicos
+
+1. Crear el repositorio.
+	Entrar a la carpeta principal del proyecto y ejecutar:
+	git init
+
+2. Enviar el archivo al estado staged, (archivos que aun no se confirma que van al repo) pero que le informa a git los cambios que se le realiza.
+	git add archivo.txt
+
+	git add . # (.) es para referenciar todos los archivos
+	
+	git rm archivo.txt #para quitarlos de ese estado
+
+	git rm --cached archivo.txt #para quitarlo del estado stage y tambien borrarlo del disco.
+
+3. Enviar el archivo al repositorio una vez se haya enviado al stage:
+
+	git commit #para confirmar los cambios y enviarlos al repo (el comando sin mensaje abrira por defecto el editor de texto obligatoriamente)
+	git commit -m "mensaje" #lo mismo pero con un mensaje indicando lo que mandamos.
+
+	git commit -am "mensaje" #Realiza el "git add ." y el commit al mismo tiempo.
+
+4. Antes de confirmar debemos indentificarnos frente a git:
+	#Ver las configuraciones:
+	1. git config --list
+
+	#ver donde se guardan las configuraciones
+	2. git config --list --show-origin
+
+	#Cambiar el nombre
+	git config --global user.name "Jese Gaitan"
+	
+	#Cambiar el email
+	git config --global user.email "jesegaitan@gmail.com"
+
+5. Para ver el historial de cambios de un archivo:
+	git log archivo.txt	
+	
+	
+=========== Como configurar el nombre de las ramas ============
+
+1. Cambiar el nombre de la rama actual (donde estamos ubicados)
+
+git branch -m <nuevo nombre>
+
+2. Cambiar el nombre de una rama especifica:
+
+git branch -m <nombre-antiguo> <nombre-nuevo>
+
+
+3. Modificar la configuracion global, para que cada vez que iniciemos un repositorio la rama principal tenga un nombre por defecto:
+
+git config --global init.defaultBranch main
+
+
+
+
+======== Como listar el nombre de las ramas =======
+
+#1. Como listar las ramas locales (las que estan en nuestro equipo)
+git branch
+
+#2. Como listar las ramas remotas
+git branch -r
+
+#3. Listas todas las ramas (tanto locales como remotas):
+git branch -a
+
+#4. Listar las ramas y con informacion adicional
+git branch -v
+
+
+
+
+
+

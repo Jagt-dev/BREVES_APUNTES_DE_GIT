@@ -1,0 +1,70 @@
+=====================
+GIT y GIT HUB 
+apuntes 30-09-2026
+
+TEMA: Que es .gitignore?
+      - Como se usa?
+      - Consejos
+
+QUE ES GITIGNORE?
+.gitignore es la extension que recibe un archivo especial sin nombre que 
+simplemente es usado para indicarle a git que cosas en nuestro proyecto
+DEBE ignorar antes de realizar un commit en el repositorio. Es
+importante por lo siguiente:
+
+1) El commit se vuelve mas ligero y enfocado en el codigo que editamos. Es decir,
+no hace una copia para miles de archivos generados automaticamente por ciertas
+librerias o tecnologias.
+
+2) Como usualmente nuestros repositorios estaran en la nube
+es muy inseguro subir datos sensibles de bases datos o claves
+privadas.
+
+COMO USARLO
+
+GitIgnore es un archivo de texto plano muy sencillo, en el que especificamos
+las cosas que debe ignorar (las reglas que git leera).
+
+--------------EJEMPLO--------------------
+# Ignorar una carpeta completa (y todo su contenido)
+/env/
+/bin/
+/lib/
+__pycache__/
+
+# Ignorar un archivo específico
+config_privada.json
+
+# Ignorar todos los archivos que terminen en una extensión (.log por ejemplo)
+*.log
+
+# Ignorar archivos ocultos del sistema operativo
+.DS_Store
+Thumbs.db
+
+
+
+CONSEJOS
+
+1) Si el proyecto consta de unos cuantos archivos no esta mal crear el .gitignore manualmente
+pero si se trata de un proyecto mas grande y que incluye archivos sensibles como bases de 
+datos lo correcto es usar un software que escanea el mencionado proyecto y genera automaticamente
+el archivo .gitignore.
+
+ejemplos:
+
+1) Toptal gitignore.io
+2) GitHub Gitignore Templates
+3) gitignore VS Code Extension
+
+EJEMPLO con gitignore.io para configurar un proyecto de react en linux:
+----------------------------------------------------------------------------
+curl -sL https://www.toptal.com/developers/gitignore/api/node,react,vscode,linux > .gitignore
+
+
+
+
+
+
+
+

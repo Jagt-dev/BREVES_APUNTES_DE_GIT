@@ -1,0 +1,37 @@
+==========================
+GIT y GIT HUB
+apuntes 10-10-2026
+
+Tema: Como resolver conflictos de fusion
+==========================
+
+Un conflict merge o conflicto de fusion
+se da cuando dos programadores trabajando en su
+respectiva rama realizan un cambio en el mismo archivo
+y en la misma linea de codigo o texto.
+
+Un conflicto en el archivo que recibira las cambios de otra rama
+se ve asi:
+
+<<<<<<< HEAD
+					GIT y GITHUB<span> curso de platzi academy</span>
+=======
+					GIT y GITHUB<span> curso de platzi.com</span>
+>>>>>>> cabecera
+
+y en la terminal donde se ejecuto el comando se ve asi:
+
+$ git merge cabecera
+Auto-fusionando index.html
+CONFLICTO (contenido): Conflicto de fusión en index.html
+Auto-fusionando style.css
+CONFLICTO (contenido): Conflicto de fusión en style.css
+Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
+
+
+La solucion no es tan dificil, git nos deja indicado las secciones donde esta el codigo actual y 
+la que viene. Asique solo borramos una de la dos y volvemos hacer el proceso de commit.
+
+Ese proceso de borrado y las secciones pintadas se ven en visual studio code y permite elegir y borrar 
+automaticamente lo que queremos.
+

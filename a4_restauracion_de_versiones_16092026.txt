@@ -1,0 +1,91 @@
+==========================
+GIT y GIT HUB
+apuntes 16-09-2026
+
+tema: Como restaurar archivos fisicos o regresar a una version.
+
+========================== 
+
+
+Existen dos formas de regresar en el tiempo dentro de una rama:
+
+--- HARD ---
+con el comando: 
+git reset {ID_COMMIT} --hard
+
+nosotros regresamos a la version del commit que hayamos especificado, borrando
+todas las versiones que hayan estado entre el HEAD y el commit que usamos.
+
+
+
+--- SOFT ---
+con el comando:
+git reset {ID_COMMIT} --soft
+
+igualmente regresamos a la version del commit que especificamos, pero
+conservamos los cambios hayamos agregado en el stagging area.
+
+
+(usar los comandos con precaucion)
+
+-------- registro de los cambios -------
+muestra un resumen de los cambios realizados dentro de los archivos en cada commit:
+git log  --stat
+
+-------- REVISAR LOS CAMBIOS ESPECIFICOS ENTRE ARCHIVOS Y COMMIT -----
+
+git diff <commit_antiguo> <commit_nuevo> -- <ruta/al/archivo>
+
+
+-----------------------------------------------
+Una forma de traer los archivos de un commit especifico
+es usando el comando "git checkout <id_commit> <archivo>"
+lo que hace es literalmente restaurar el archivo
+a un commit(version) anterior. Si no se especifica el archivo
+todo el repositorio regresa a dicha version.
+
+
+Funciona de la siguiente manera.
+
+1. Modifica el espacio de trabajo. Es decir, reempleza el archivo 
+por su version antigua. (la del commit especificado)
+
+2. Lo prepara en el Staging Area (Index): El archivo se
+ marca automáticamente como "listo para commit" (staged).
+ 
+
+=========================================================
+resumen:
+
+
++------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+
+
+| Comando          | ¿Modifica la rama actual  | ¿Modifica el Staging Area?      | ¿Modifica tus archivos en disco? | Propósito principal                                     |
+|                  | (HEAD)?                   |                                 |                                  |                                                         |
++------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+
+
+| git switch       | Sí (salta a otra rama)    | No                              | Sí (los de la otra rama)         | Cambiar de rama de forma segura.                        |
++------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+
+
+| git restore      | No                        | Opcional (con --staged)         | Sí (descarta cambios)            | Deshacer cambios locales en archivos específicos.       |
++------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+
+
+| git checkout     | Sí / No (depende del uso) | Sí / No                         | Sí                               | Comando antiguo para cambiar ramas o restaurar archivos.|
++------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+
+
+| git reset --soft | Sí (va al pasado)         | No (mantiene tus cambios listos)| No (tus archivos no cambian)     | Deshacer commits para corregirlos o agruparlos.         |
++------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+
+
+| git reset --hard | Sí (va al pasado)         | Sí (lo limpia por completo)     | Sí (borra todo tu progreso)      | Volver al pasado borrando todo rastro posterior.        |
++------------------+---------------------------+---------------------------------+----------------------------------+---------------------------------------------------------+
+
+es mas seguro Usar git checkout para volver al pasado, debido a que no deshace los commit solo los restaura y dependera de nosotros
+hacer un commit para para que dicha version la dejemos nuevamente como la actual.
+
+
+
+
+
+
+
+

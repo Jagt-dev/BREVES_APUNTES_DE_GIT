@@ -1,0 +1,96 @@
+=====================
+GIT y GIT HUB
+apuntes 04-09-2026
+
+Recordar que cuando hablamos de un commit nos referimos a que los cambios de un archivo se confirman y se guardan en git.
+
+git log -> Muestra un historial de commits (confirmaciones o versiones respaldadas)
+
+git show archivo.txt -> Muestra todos los cambios que se han realizado dentro del archivo o todos los archivos del repo si no se especifica cual
+
+git diff -> Compara las diferecias entre dos versiones distintas usando como parametro el ID de cada commit. Asi sabremos que fue lo que cambio desde una version a otra.
+
+	ejemplo:
+
+	#con git log miramos las versiones que queremos comparar y tomamos los id de comit
+	git log
+	
+	===============================================================================
+	resultado:
+
+	commit fd233ecb055e84697f8580fa5a2a8114bb35566e (HEAD -> master)
+	Author: Jese Gaitan <jesegaitan@gmail.com>
+	Date:   Fri Sep 4 14:46:01 2026 -0600
+
+		Se especifica a quienes va el saludo.
+
+	commit 4306a355fee32619cc3ebdf4ccca83c3554790d7
+	Author: Jese Gaitan <jesegaitan@gmail.com>
+	Date:   Fri Sep 4 14:42:56 2026 -0600
+
+		Se agrega saludos, linea 7
+
+	commit be198dc2756d950ded53f5ca16cd5e9c4bc0061a
+	Author: Jese Gaitan <jesegaitan@gmail.com>
+	Date:   Thu Sep 3 18:01:01 2026 -0600
+
+		Cambios en la linea 3, se agrega la palabra edad
+
+	commit b45b30e77ec11642a0b0e3507eeb6fc90a74414f
+	Author: Jese Gaitan <jesegaitan@gmail.com>
+	Date:   Thu Sep 3 17:56:17 2026 -0600
+
+		Mi primer Commit
+
+	================================================================================
+
+
+	#Un vez tomado los id que vamos a comparar usamos "git diff id_1 id_2"
+	git diff b45b30e77ec11642a0b0e3507eeb6fc90a74414f fd233ecb055e84697f8580fa5a2a8114bb35566e
+
+
+	================================================================================
+	resultado:
+
+	diff --git a/historia.txt b/historia.txt
+	index 950af87..99bb6bf 100644
+	--- a/historia.txt
+	+++ b/historia.txt
+	@@ -1,5 +1,7 @@
+	 hola soy Jese
+ 
+	-tengo 21 años
+	+tengo 21 años de edad
+ 
+	-estudio github
+	\ No newline at end of file
+	+estudio github
+	+
+	+saludos a todos
+	\ No newline at end of file
+
+	================================================================================
+
+
+	Interpretacion:
+
+	1) (-) significa que ese cambio desapareci o se sustituyo
+	2) (+) significa que ese cambio se establecio como sustituto de otro. Ejemplo:
+
+		#Se cambio "tengo 21 años" por "tengo 21 años de edad"		
+		-tengo 21 años
+		+tengo 21 años de edad
+
+
+	3) (--- a/historia.txt) es la version A o el 1er id de commit usado en el comando
+	4) (--- b/historia.txt) es la version B o el segundo parametro usado en el comando 
+	5) @@ -1,5 +1,7 @@ 
+
+
+	
+	 
+
+
+
+
+Para ver las diferencias en un archivo especifico usar: git diff <id commit 1><id commit 2> -- <archivo>

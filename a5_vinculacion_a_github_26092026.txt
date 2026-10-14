@@ -1,0 +1,61 @@
+===========================
+GIT y GIT HUB
+apuntes 26-09-2026
+
+tema: Como vincular un repositorio local con otro alojado en GITHUB.
+==========================
+
+1. Configurar el nombre completo y el correo usado en github:
+	git config --global user.name "Jese G..."
+	git config --global user.email "jagt@gmail.com"
+
+2. Generar una clave publica con el comando de ssh:
+	ssh-keygen -t ed25519 -C "jagt@gmail.com"
+
+3. copiar la clave publica:
+	cat ~/.ssh/id_ed255193.pub
+
+4.Dirigirse a "github.com > Settings > SSH and GPG keys > New SSH key"
+
+5. Poner un titulo: "Laptop Fedora"
+
+6. Pegar la clave publica donde se indica.
+
+7. Crear un repositorio vacio en github y no añadir los archivos .gitignore, README o licencia.
+
+8: Copiar el contenido de la pestaña SSH una vez se creo el repositorio "git@github:usuario/nombrerpo.git"
+
+9. Crear un repositorio local en fedora y seguir el proceso completo:
+
+	git init
+	git add .
+	git commit -m "Primer Commit desde Fedora"
+
+	#Si no se ha cambiado el nombre de la rama principal usar: "
+	git branch -M main
+
+
+10. Vincular el repositorio local con el de GitHub
+	git remote add origin git@github:usuario/nombrerpo.git
+
+11. Subir los archivos por primera vez
+	git push -u origin main
+
+	EXPLICACION:
+	"git push": es la intruccion que le indica a git subir los archivos locales a un servidor
+	"-u": es una opcion que indica a git que se debe establecer un origen por defecto en la rama
+		especificada, en este caso "main", con esto las proximas veces solo usaremos "git push"
+		para subir archivos y principalmente los cambios "commits".
+
+	"origin": Es un alias que internamente hace referencia al enlace anterior "git@github...git"
+	"main": La rama que se usa para subir sus cambios al servidor.
+
+
+
+	
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+==========================
+GIT y GIT HUB
+apuntes 12-10-2026
+
+tema: - Git Hub
+      - PULL, PUSH y ORIGINES REMOTOS
+
+==========================
+
+
+Recapitulacion:
+Git Hub: Es un servidor global dedicado a servir "git" para alojar multiples repositorios.
+
+Repositorio remoto: Es el espacio virtual (el archivo .git) almacenado en una computadora
+externa. Ejemplo: Un repositorio creado en un servidor como github.
+
+Push: Es la orden de git para mandar la ultima version del repositorio directo al repositorio
+remoto.
+
+Pull: Es la orden de git contraria a push. Es decir, es el comando para traer la ultima version 
+del repositorio remoto a nuestro repositorio local, pero adicionalmente ejecuta un merge para
+fusionar los cambios.
+
+
+
+
+Flujo de vinculacion entre repositorio local y remoto(REPASO)
+
+1. Identificarse localmente (Configurar usuario y correo en git config --global)
+
+2. Generar un par de claves usando el algoritmo id_ed255193 y como comentario usar nuestro correo.
+      ssh-keygen -t ed25519 -C "bscojagt62@gmail.com"
+
+3. Localizar y copiar la clave publica que genero.
+      cat home/usuario/.ssh/id_ed25519.pub
+
+4. Dirigirse a github.com > settings > ssh and gpg keys 
+      crear una conexion cifrada pegando la clave publica.
+
+5. Crear el repositorio remoto vacio en GitHub y copiar su direccion ssh.
+
+6. Usamos Git Clone y la direccion ssh para tener una copia localmente.
+
+7. Verificamos cual es el origen del repositorio local clonado.
+      git remote -v
+
+8. Luego dependiendo de la rama en la que trabajamos utilizamos los comandos:
+      git <push/pull> -u origin <main>
+
+      con el objetivo de enlazar la rama al origen y que los comandos se simplifique a solo
+      git push #para enviar cambios
+      git pull #traer nuevos cambios
+
+En caso de no tener un origen asociado al repositorio remoto entonces lo agregamos de la siguiente
+manera:
+
+      git remote add origin <url ssh o https>
+
+(siempre es ideal hacer pull primero antes de enviar cambios.)
+
+git remote #Muestra los origenes remotos de nuestro repositorio
+git remote -v #Lo  mismo pero detalla la direccion url del repositorio
+

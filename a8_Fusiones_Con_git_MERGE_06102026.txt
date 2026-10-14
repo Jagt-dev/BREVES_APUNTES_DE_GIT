@@ -1,0 +1,53 @@
+==========================
+GIT y GIT HUB
+apuntes 06-10-2026
+
+Tema: Como se fusionan las ramas
+==========================
+
+GIT merge
+---------------
+El comando git merge es un comando que fusiona la ultima
+version de una rama con la de otra (usualmente con la rama main).
+Esta fusion por defecto crea otra version en la rama de destino 
+(donde esta el head apuntando).
+
+
+INSTRUCCIONES:
+Para hacer merge primero hay que estar en la rama destino (main por ejemplo)
+o la que queremos que se traiga o reciba las versiones de otra rama.
+Para verificarlo usamos git show y miramos donde 
+esta el head, Luego simplemente ejecutamos el comando:
+
+SINTAXIS:
+git merge <rama_origen> -m "mensaje de fusion"
+
+
+
+Ejmplo de uso
+
+En el repo_10102026_practico tenemos un sitio web y creamos
+una rama adicional llamada "cabecera" que contiene ligeros
+cambios en comparacion con la rama principal "main". En la 
+rama cabecera agregamos un div que lleva estilos para un 
+titulo de la pagina web, mientras que en la rama main solo
+tenemos el contenido. Con git merge traemos todos esos cambios
+a la rama main.
+
+
+
+
+
+
+
+--RECPITULACIONES:
+
+crear una nueva rama: git branch <nombre_de_la_rama>
+moverse a la rama: git switch <nombre_de_la_rama>
+		 o git checkout nombre_de_la_rama
+listar las ramas: git branch
+ver en que rama estoy: git show
+ver el historial del proyecto en la rama actual: git log
+
+
+
