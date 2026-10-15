@@ -1,1 +1,1 @@
-QUe onda, ahi dejo algunos de mis apuntes.
+Que onda, ahi dejo algunos de mis apuntes.
