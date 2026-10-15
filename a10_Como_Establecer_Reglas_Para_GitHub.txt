@@ -1,0 +1,20 @@
+========================
+GIT y GITHUB
+apuntes 14-10-2026
+
+tema: Como establecer reglas en Git Hub.
+
+========================
+
+
+Configuración de Regla de Protección de Ramas en GitHub:
+
+1. Entra a tu repositorio en GitHub y ve a la pestaña "Settings" (Configuración).
+2. En el menú lateral izquierdo (sección Code and automation), haz clic en "Branches" (o "Rules" -> "Rulesets").
+3. Haz clic en el botón "Add branch ruleset" o "Add rule".
+4. Ponle un nombre a la regla y en "Branch pattern" escribe el nombre de la rama (ej. main).
+5. Activa la casilla "Require a pull request before merging" (obliga a usar Pull Requests).
+6. Activa la casilla "Block force pushes" (evita que se borre el historial de la rama).
+7. Para que te afecte también a ti (como dueño/administrador), activa la casilla "Do not bypass above settings" o "Enforce rules for administrators".
+8. Baja al final de la página y haz clic en "Create" o "Save changes".
+
