@@ -90,7 +90,27 @@ alias nombre_del_alias="comandos"
 #ejemplo
 alias arbol="git log --all --graph --decorate --oneline"
 
+#ejecutar:
+arbol
+
+------------------------ TAGs -----------------------------
 
 
 
-git log --all --graph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
