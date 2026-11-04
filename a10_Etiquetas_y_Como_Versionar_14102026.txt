@@ -78,6 +78,17 @@ rc (release Candidate): Candidato Final
 Sin sufijo indica que es la version estable.
 
 
+--------------------------------------------------
+GIT TAGS y algunos alias.
+
+Para hacer unos alias breves se usa el comando alias, el nombre del alias y entre comillas
+el comando que se ejecutara:
+
+#comando
+alias nombre_del_alias="comandos"
+
+#ejemplo
+alias arbol="git log --all --graph --decorate --oneline"
 
 
 
