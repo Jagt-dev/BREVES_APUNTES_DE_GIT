@@ -1,3 +1,85 @@
+=====================
+GIT y GIT HUB 
+apuntes 04-11-2026
+
+
+tema: Como poner Tags (para especificar versiones)
+=====================
+
+¿Como versionar un software?
+El estandar para versionar mas comun se llama Versionado Semantico (Semantic Versioning)
+el formato es el siguiente:
+
+[MAJOR].[MINOR].[PATCH]
+  0    .  0    .  0
+
+Donde:
+
+MAJOR: Aumenta cuando hay cambios que se vuelven incompatibles con la version anterior y usualmente
+son cambio grandes.
+
+MINOR: Aumenta cuando hay nuevas funcionalidades pero que siguen siendo compatibles.
+
+PATCH: Aumenta cuando hay correccion de errores y pequeños ajustes.
+
+#EJEMPLO:
+
+/*CORRECCION DE BUGS*/
+
+1.4.2 -> 1.4.3
+
+Cambiamos:
+Error de calculo, Algun error visual o una optimizacion menor.
+
+
+/*NUEVA FUNCIONALIDAD*/
+
+1.4.2 -> 1.5.0
+
+Cambiamos:
+Un nuevo reporte, Nuevo endpoint API o nueva Pantalla.
+
+NOTA: Al incrementa MINOR se reinicia PATCH a 0.
+
+
+/*CAMBIO IMPORTANTE*/
+1.4.2 -> 2.0.0
+
+CAMBIOS:
+Nueva estructura de la base de datos
+Eliminacion de APIs antiguas
+Modificacion de formatos de entrada que rompen sistemas existentes.
+
+NOTA: Al incrementas MAJOR se reinician MINOR y PATCH.
+
+
+La version inicial suele ser:
+0.1.0
+
+El cero en MAJOR indica que el software aun esta en desarrollo y puede cambiar bastante.
+
+Al llegar a la primera version estable:
+
+1.0.0
+
+----------------------------------------------
+Versiones de pre-lanzamiento
+
+1.0.0-alpha
+1.0.0-beta
+1.0.0-rc.1
+1.0.0-rc.2
+1.0.0
+
+Significado
+aplha: muy experimental
+beta: casi listo para pruebas.
+rc (release Candidate): Candidato Final
+Sin sufijo indica que es la version estable.
+
+
+
+
 
 
 git log --all --graph
