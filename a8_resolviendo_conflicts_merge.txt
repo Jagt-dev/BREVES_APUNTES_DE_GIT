@@ -35,3 +35,24 @@ la que viene. Asique solo borramos una de la dos y volvemos hacer el proceso de 
 Ese proceso de borrado y las secciones pintadas se ven en visual studio code y permite elegir y borrar 
 automaticamente lo que queremos.
 
+
+-------------------------------------------
+AVECES HAY CONFLICTOS ENTRE GIT LOCAL Y GITHUB
+llamados "Divergencia de historial"
+
+Asique usar esto en caso de emergencia:
+git config --global pull.rebase false
+
+
+• Con esto le respondiste la pregunta a Git para siempre. Le dijiste: "Cada vez que ocurra esto,
+usa el método tradicional de Fusión (Merge)".
+
+• Git simplemente vio que GitHub tenía un commit nuevo y tú tenías otro commit nuevo,
+y se detuvo porque no sabía qué método querías usar para unirlos (si usar un merge o un rebase). En
+cuanto le configuraste pull.rebase false, Git aplicó la fusión de forma
+automática y exitosa.
+
+
+
+
+
