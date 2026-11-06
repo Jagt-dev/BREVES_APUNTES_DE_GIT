@@ -61,7 +61,7 @@ Opción 2: Si el Usuario B trabaja desde un Fork (Código abierto / Contribució
 
 
 	
-
+NOTA: UN FORK no es lo mismo que una branch.
 
 
 
