@@ -1,0 +1,78 @@
+-------------------------
+GIT y GITHUB 
+apuntes 06-11-2026
+
+tema: ¿Que es un pull request y como hacerlo?
+
+-------------------------
+
+Que es un PULL REQUEST.
+
+Para comenzar un PR es un procedimiento que actualmente es exclusivo de GITHUB (hablando de la tecnologia git)
+y basicamente es un propuesta formal que hace un desarrollador para fusionar (hacer merge) los cambios de
+codigo de una rama secundaria en una rama de destino (usualemnte la rama principal "main" o "master").
+
+
+PROCEDIMIENTO y EJEMPLO:
+
+Para este ejemplo, el Usuario B (tú) enviará los cambios de su rama feature/login al repositorio
+del Usuario A para fusionarlos en la rama main:
+
+
+--- OPCION 1. Si el usuario B es el colaborador directo en el repositorio del usuario A ---
+
+
+1. Sube la ram: Asegurarse de haber enviado los cambios locales a github usando git push 
+origin feature/login
+
+2. Entra al repositorio
+
+3. Usar el aviso rapido: Al entrar, GitHub detectará que subimos cambos recientemente y mostrará un banner amarillo
+arriba. Hacer click en el boto verde "Compare & pull request"
+
+4. Configurar manualmente (si no sale el banner): Si el banner no esta, dirigirse a la pestaña "Pull request", hacer
+click en el boto verde "New pull request" y asegurarse de configurar los selectores de ramas de la siguiente manera:
+
+	1. base: main (La rama de usuario A donde queremos meter el codigo).
+	2. compare: feature/login (Nuestra rama con los cambios).
+
+5. Escribir los detalles: Poner un titulo descriptivo (ej. "Implementacion del formulario de login") y agregar una descripcion
+detallada en el cuadro de texto explicando que cambios hicimos.
+
+6. Crear la solicitud: Dar click en el boton verde "Create pull request" y listo. EL usuario A recibira una notificacion para
+revisar el codigo.
+
+
+
+Opción 2: Si el Usuario B trabaja desde un Fork (Código abierto / Contribución externa)
+
+1. Entra a tu bifurcación: Inicia sesión como Usuario B y ve a tu propio repositorio modificado (ej. ://github.com).
+
+2. Inicia la solicitud: Ve a la pestaña "Pull requests" y haz clic en "New pull request".
+
+3. Haz clic en "compare across forks": Verás un enlace que dice "compare across forks", haz clic ahí para que GitHub te permita conectar dos repositorios diferentes.
+
+4. Configura las cuatro casillas correspondientes:
+	• base repository: UsuarioA/nombre-del-repo | base: main
+	• head repository: UsuarioB/nombre-del-repo | compare: feature/login
+
+5. Revisa y crea: Haz clic en "Create pull request", escribe el título/descripción de tus cambios y confirma haciendo clic nuevamente en el botón verde "Create pull request".
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
