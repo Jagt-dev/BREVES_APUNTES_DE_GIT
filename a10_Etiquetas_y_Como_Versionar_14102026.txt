@@ -94,9 +94,32 @@ alias arbol="git log --all --graph --decorate --oneline"
 arbol
 
 ------------------------ TAGs -----------------------------
+Las etiquetas son basicamente titulos sencillos de leer que le ponen a las versiones, en el caso de git
+es el titulo que se le da a un id de commit (hash).
+
+#crear un tag
+git tag -a nombre-del-tag -m "Mensaje" HASH-a-etiquetar
 
 
+#LISTAR LAS ETIQUETAS:
+git tag -l
 
+#LISTAR LAS ETIQUETAS Y REVISAR SUS REFERENCIAS
+git show-ref --tags
+
+#Enviar las etiquetas a github:
+git push origin --tags
+
+#Eliminar un tag:
+git tag -d nombre-del-tag
+
+
+#NOTA: luego de eliminar y enviar los cambios a gitub -> (Git Pull y Git Push Origin -Tags) nos damos cuenta
+que todavia aparecen los tags en github, por ello hacemos lo siguiente:
+
+git push origin:refs/tags/nombre-del-tag
+
+Con eso eliminamos el tag y su referencia en el repo. remoto.
 
 
 
