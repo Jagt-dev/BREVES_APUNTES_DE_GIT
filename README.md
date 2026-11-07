@@ -1,6 +1,6 @@
 # Bienvenidos a mi repositorio.
 
-Este es un repositorio para guardar los apuntes de un curso de GIT y GITHUB que termine en [[platzi]][1]git_y_github.
+Este es un repositorio para guardar los apuntes de un curso de GIT y GITHUB que termine en [platzi][1].
 
 
 ### Encontrarás:
@@ -15,4 +15,4 @@ etc..
 
 
 
-
+[1]: https://platzi.com/cursos/git-github/ "git"
