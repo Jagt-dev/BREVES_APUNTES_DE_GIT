@@ -1,0 +1,121 @@
+-------------------------
+GIT y GITHUB  
+apuntes 07-11-2026 
+
+tema: Forks (Bifurcaciones)
+-------------------------
+
+
+Un fork es una copia exacta e independiente de un repositorio
+publico que se almacena en nuestra cuenta de github como si fuese uno propio.
+
+
+
+# Se usa para:
+
+1) Contribuir a proyectos de codigo abierto para aportar nuevas funciones en programas
+ajenos de los cuales no tenemos acceso directo como colaborador.
+
+2) Se usa tambien para experimentar, crear nuestros propios proyectos apartir del de otro.
+
+
+--- Sincronizacion ---
+
+Hacer un fork es sencillo, pero si nuestro objetivo es contribuir con otras personas
+entra el siguiente concepto:
+
+origin y upstream.
+
+
+Estos dos son los alias que se les da por defecto a los origenes del repositorio:
+
+* ORIGIN: es la url que usamos para clonar hacia nuestro equipo el repositorio copiado (la bifurcacion)
+
+* UPSTREAM: es la url del repositorio original.
+
+--- Proceso ---
+
+#Paso 1: Configurar el repositorio original (Solo se hace una vez)
+
+	git remote add upstream URL_DEL_REPOSITORIO_ORIGINAL
+
+#Paso 2: Sincronizar los cambios (Cada vez que sea necesario actualizar)
+
+	# Moverse a main:
+	git checkout main
+
+	#Traer las novedades del autor original
+	git fetch upstream
+
+	#Fusionar los cambios
+	git merge upstream/main
+
+	#Subir los cambios a nuestro repositorio (la bifucarcion)
+	git push origin main
+
+
+
+========================================================================
+             COMPLEMENTO DE APUNTES: BUENAS PRÁCTICAS Y PULL REQUESTS
+========================================================================
+
+--- Sugerencias de Buenas Prácticas y Comandos Clave ---
+
+* Comprobación de remotos:
+  Antes de sincronizar, verifica qué URLs tienes configuradas con el comando:
+  git remote -v
+
+* REGLA DE ORO: ¡Nunca trabajes directo en "main"!
+  Para evitar conflictos al sincronizar con upstream, mantén tu rama 'main'
+  limpia (idéntica a la del autor original). Cada vez que vayas a crear una 
+  nueva función o corregir un error, crea una rama secundaria (feature branch).
+
+* Crear y cambiarte a una nueva rama de trabajo:
+  git checkout -b mi-nueva-funcion
+  (Este comando crea la rama 'mi-nueva-funcion' y te mueve a ella automáticamente).
+
+
+--- ¿Cómo funciona un Pull Request (PR) desde un Fork? ---
+
+El Pull Request es la vía formal para decirle al dueño del repositorio original 
+(upstream) que revise tus cambios y, si está de acuerdo, los incorpore a su proyecto.
+
+Flujo de trabajo completo para enviar un PR:
+
+Paso 1: Sincroniza tu rama main local con el upstream (usa los comandos que ya tienes anotados).
+Paso 2: Crea una rama específica para tu contribución:
+        git checkout -b corregir-error-login
+Paso 3: Realiza las modificaciones en el código.
+Paso 4: Guarda tus cambios localmente:
+        git add .
+        git commit -m "Fix: corregido error de validación en el formulario de login"
+Paso 5: Sube tu rama secundaria a TU repositorio de GitHub (origin):
+        git push origin corregir-error-login
+
+Paso 6: Crear el Pull Request desde la interfaz web de GitHub:
+        1. Entra a tu repositorio fork en GitHub.
+        2. Verás un cartel flotante amarillo que dice "Compare & pull request" 
+           de la rama que acabas de subir. Haz clic ahí.
+        3. Configura la dirección del PR (GitHub lo hace automáticamente):
+           [Base repository: original/main]  <-  [Head repository: tu-fork/corregir-error-login]
+        4. Escribe un título claro y una descripción detallada de tus cambios.
+        5. Haz clic en "Create pull request".
+
+¿Qué pasa después?
+* El dueño del proyecto original recibirá una notificación.
+* Se ejecutarán pruebas automáticas (si el proyecto tiene herramientas de CI/CD).
+* El autor puede pedirte cambios o correcciones en tu código. Si te pide cambios, 
+  solo debes hacerlos en tu computadora, guardarlos (commit) y subirlos (push) 
+  a esa misma rama; el PR se actualizará automáticamente en GitHub.
+* Si todo está correcto, el autor aceptará el PR y tu código se fusionará con el original.
+========================================================================
+
+
+
+
+
+
+
+
+
+ 
