@@ -79,7 +79,7 @@ Sin sufijo indica que es la version estable.
 
 
 --------------------------------------------------
-GIT TAGS y algunos alias.
+GIT TAGS y algunos alias en linux.
 
 Para hacer unos alias breves se usa el comando alias, el nombre del alias y entre comillas
 el comando que se ejecutara:
