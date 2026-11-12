@@ -47,11 +47,12 @@ git stash list
 
 --------------- Importante -------------------------
 
-#Recuperar los cambios más recientes y los elimina de la lista del stash
-git stash pop stash@{N} #cambiar la "N" por el numero de stash requerido.
+#Recuperar los cambios más recientes y eliminarlo de la lista del stash
+git stash pop
 
 #Recuperar los cambios de un stash en especifico
-git stash pop
+git stash pop stash@{N} #cambiar la "N" por el numero de stash requerido.
+
 
 -----------------------------------------------------
 
