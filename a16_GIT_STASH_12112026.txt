@@ -1,0 +1,88 @@
+═══════════════════════════════════════════════════════════════════════════════
+                         
+                                                                                                          
+          /\            ██████╗ ██╗████████╗    ██╗   ██╗                                                 
+         /  \          ██╔════╝ ██║╚══██╔══╝    ╚██╗ ██╔╝                                                 
+        /    \         ██║  ███╗██║   ██║        ╚████╔╝                                                  
+       / \    \        ██║   ██║██║   ██║         ╚██╔╝                                                   
+      /   \    \       ╚██████╔╝██║   ██║          ██║                                                    
+     /     O    \       ╚═════╝ ╚═╝   ╚═╝          ╚═╝                                                    
+    /      |\    \      ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗                                      
+   /       | \    \    ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗                                     
+   \       |  O   /    ██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝                                     
+    \      |     /     ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗                                     
+     \     O    /      ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝                                     
+      \        /        ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝                                      
+       \      /        ----------------------------------------------                                     
+        \    /         Apuntes: 12-11-2026                                                                
+         \  /          Tema:    Git Stash                                                                 
+          \/                                                                                              
+                                                                                                          
+═══════════════════════════════════════════════════════════════════════════════
+
+Cuando estamos trabajando en un archivo y necesitamos movernos a otra rama,
+lo correcto es hacer commit del trabajo actual para ahora si trasladarse, por que
+si no se hace, el progreso en el que hemos trabajado simplemente desaparece
+pero ¿qué pasa cuando no estamos listo de hacer un commit todavía y requerimos
+movernos a otra rama?
+
+ ---------------------------------------------------------------------------------------
+| Git Stash es util por que ayuda a no ensuciar el historia con "commits incompletos".  |
+\---------------------------------------------------------------------------------------/
+
+
+
+Comandos para guardar el estado antes de cambiarse de branch:
+=====================================================================================
+
+#guardar las modificaciones actuales (archivos rastreados) y devuelve el codigo al ultimo commit:
+git stash
+
+
+#guardar tambien archivos nuevos que aun no han sido rastreados por git (untracked)
+git stash -u
+
+#Mostrar una lista de todos los guardados temporales que hay acumulados.
+git stash list
+
+--------------- Importante -------------------------
+
+#Recuperar los cambios más recientes y los elimina de la lista del stash
+git stash pop stash@{N} #cambiar la "N" por el numero de stash requerido.
+
+#Recuperar los cambios de un stash en especifico
+git stash pop
+
+-----------------------------------------------------
+
+#Recupera los cambios, pero mantiene una copia guardada en el stash por si queremos reutilizarlos
+git stash apply
+
+#Borrar el ultimo stash guardado sin aplicar sus cambios en el codigo.
+git stash drop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
