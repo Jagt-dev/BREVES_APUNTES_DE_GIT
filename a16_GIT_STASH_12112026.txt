@@ -20,6 +20,7 @@
                                                                                                           
 ═══════════════════════════════════════════════════════════════════════════════
 
+
 Cuando estamos trabajando en un archivo y necesitamos movernos a otra rama,
 lo correcto es hacer commit del trabajo actual para ahora si trasladarse, por que
 si no se hace, el progreso en el que hemos trabajado simplemente desaparece
