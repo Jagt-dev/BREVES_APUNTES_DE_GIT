@@ -80,7 +80,7 @@ git rebase seguido del nombre de la rama que queremos traer los cambios.
 Por ejemplo, si estamos en la rama main y queremos traer 
 los cambios de la rama rebase_ejemplo, debemos ejecutar el siguiente comando:
 
-	git rebase rebase_ejemplo
+	git rebase rama_feature
 
 NOTA: por defecto git rebase mueve todos los commit que tenga
 la rama origen, si debemos delimitar entonces usamos otros comandos
