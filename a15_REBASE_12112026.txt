@@ -1,0 +1,90 @@
+---------------------
+GIT Y GITHUB
+apuntes 12-11-2026
+
+tema: Git Rebase
+
+---------------------
+
+Es un comando que mueve o vuelve aplicar los commits de una rama
+encima de otra diferente. Su objetivo principal es integrar cambios
+manteniendo un historial de proyecto limpio y lineal.
+
+EJEMPLO ILUSTRATIVO:
+
+=================================================================
+|    Original                                                   |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               | 
+|                                                               |
+| main:   (A)--->(B)--->(C)--->(D)                              |
+|              \                                                |
+|               \                                               |
+| feature:       \--->(E)--->(F)--->(G)                         |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               |
+=================================================================
+
+=================================================================
+|    Git Merge                                                  |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               | 
+|                                                               |
+| main:  (A)--->(B)--->(C)--->(D)--->(G')                       |
+|               \                     ^                         |
+|                \                     \  git merge             |
+|                 \                     \                       |
+| feature:         \--->(E)----->(F)---->(G)                    |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               |
+|                                                               |
+=================================================================
+
+ ================================================================
+|    Git Rebase                                                  |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                   _ _ _ _ _ _ _ _ _ _ _        | 
+|                                  |                     |       |
+| main: (A)--->(B)--->(C)--->(D)---|->(E)--->(F)--->(G') |       |
+|               \                  |_ _ _ _ _ _ _ _ _ _ _|       |
+|                \                        ^                      |
+|                 \                      /   git rabase          |
+|                  \     _ _ _ _ _ _ _ _/ _ _ _                  |
+|                   \   |                     |                  |   
+| feature:           \--|->(E)--->(F)--->(G)  |                  |
+|                       |_ _ _ _ _ _ _ _ _ _ _|                  |
+|                                                                |
+|                                                                |
+|                                                                |
+|                                                                |
+ ================================================================
+
+
+Para usar el comando rebase, primero debemos posicionarnos
+en la rama que queremos actualizar y luego ejecutar el comando
+git rebase seguido del nombre de la rama que queremos traer los cambios.
+Por ejemplo, si estamos en la rama main y queremos traer 
+los cambios de la rama rebase_ejemplo, debemos ejecutar el siguiente comando:
+
+	git rebase rebase_ejemplo
+
+NOTA: por defecto git rebase mueve todos los commit que tenga
+la rama origen, si debemos delimitar entonces usamos otros comandos
+como git cherry-pick.
+
+
+
