@@ -1,0 +1,91 @@
+═══════════════════════════════════════════════════════════════════════════════
+                                                                                                                                   
+          /\            ██████╗ ██╗████████╗    ██╗   ██╗                                                 
+         /  \          ██╔════╝ ██║╚══██╔══╝    ╚██╗ ██╔╝                                                 
+        /    \         ██║  ███╗██║   ██║        ╚████╔╝                                                  
+       / \    \        ██║   ██║██║   ██║         ╚██╔╝                                                   
+      /   \    \       ╚██████╔╝██║   ██║          ██║                                                    
+     /     O    \       ╚═════╝ ╚═╝   ╚═╝          ╚═╝                                                    
+    /      |\    \      ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗                                      
+   /       | \    \    ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗                                     
+   \       |  O   /    ██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝                                     
+    \      |     /     ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗                                     
+     \     O    /      ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝                                     
+      \        /        ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝                                      
+       \      /        ----------------------------------------------                                     
+        \    /         Apuntes: 12-11-2026                                                                
+         \  /          Tema:    Git REFLOG y AMEND
+          \/                                                                                                        
+                                                                                                          
+═══════════════════════════════════════════════════════════════════════════════
+
+Siempre habran momentos donde estarán presente los desastres en nuestro proyecto:
+- Eliminamos archivos accidentalmente de la rama "main"
+- Mezclamos erronamente ramas
+- Eliminamos directamente las ramas
+- Resetemos erroneamente con "git reset hard" una rama importante.
+
+
+Sin embargo, cualquier accion que se haya creado, estara guardado en un "caja negra"
+de git llamada "reflog" (git reference log). Es basicamente el 
+historial privado del repositorio local que registra cada movimiento que se hace
+con las ramas y el puntero (HEAD).
+
+
+------------------------------------------------
+¿Qué diferencia hay entre git log y git reflog?
+------------------------------------------------
+• git log muestra la historia pública del proyecto. Solo enseña los commits 
+  activos que forman parte de la rama actual. Si borramos commits con reset --hard
+  desaparecen de aquí.
+
+• git reflog muestra nuestra actividad personal en esa computadora. Registra cada vez 
+  que cambiamos de rama, hacemos un commit, un merge, un rebase o un reset. Esta información
+  es estrictamente local y no se sube a GitHub ni a ningún servidor.
+
+Ejemplo:
+
+#Ejecutamos
+git reflog
+
+#resultado
+
+a1b2c3d HEAD@{0}: reset: moving to HEAD~3   <-- El error que acabas de cometer
+9f8e7d6 HEAD@{1}: commit: Agrego carrito     <-- El estado sano al que quieres volver
+
+#Regresamos en el tiempo:
+git reset --hard 9f8e7d6 
+
+#Ó
+git reset --hard HEAD@{1} 
+
+Esos comandos nos daran visibilidad de los cambios realizados y con reset --hard los
+restauramos.
+
+
+----------------- --amend-------------------------
+"git commit --ammend" es una opcion del comando commit que permite
+modificar el Ultimo commit realizado. Sirve para corregir un error
+en el mensaje como para agregar archivos evitando de esa manera
+crear commit basura como "fix typo" o "olvide un archivo".
+
+#COMANDO
+
+#Correccion en solo el mensaje:
+git commit --amend -m "Nuevo mensaje corregido"
+
+#Correccion en un archivo olvidado:
+git add archivo_olvidado.js
+git commit --amend --no-edit
+
+
+
+
+
+
+
+
+
+
+
+

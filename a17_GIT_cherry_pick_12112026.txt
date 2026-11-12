@@ -1,0 +1,48 @@
+═══════════════════════════════════════════════════════════════════════════════
+                                                                                                                                   
+          /\            ██████╗ ██╗████████╗    ██╗   ██╗                                                 
+         /  \          ██╔════╝ ██║╚══██╔══╝    ╚██╗ ██╔╝                                                 
+        /    \         ██║  ███╗██║   ██║        ╚████╔╝                                                  
+       / \    \        ██║   ██║██║   ██║         ╚██╔╝                                                   
+      /   \    \       ╚██████╔╝██║   ██║          ██║                                                    
+     /     O    \       ╚═════╝ ╚═╝   ╚═╝          ╚═╝                                                    
+    /      |\    \      ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗                                      
+   /       | \    \    ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗                                     
+   \       |  O   /    ██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝                                     
+    \      |     /     ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗                                     
+     \     O    /      ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝                                     
+      \        /        ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝                                      
+       \      /        ----------------------------------------------                                     
+        \    /         Apuntes: 12-11-2026                                                                
+         \  /          Tema:    Git Cherry-Pick                                                            
+          \/                                                                                                        
+                                                                                                          
+═══════════════════════════════════════════════════════════════════════════════
+
+
+El comando git cherry pick sirve para copiar cualquier commit especifico del 
+pasado en cualquier rama y aplicarlo en la rama actual sin tener que fusionar
+(hacer merge) toda la rama completa.
+
+
+Git toma los cambios exactos que introdujo ese commit y los aplica sobre la
+punta (HEAD) de la rama en la que estamos parado.
+
+
+
+SINTAXIS:
+git cherry-pick <id_commit> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
