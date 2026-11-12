@@ -1,18 +1,41 @@
-# Bienvenidos a mi repositorio.
+```text
+================================================================================
+                                                                                
+          /\                 APUNTES PARA LAS CLASES DE                         
+         /  \        ----------------------------------------------             
+        /    \        ██████╗ ██╗████████╗    ██╗   ██╗                         
+       /  o   \      ██╔════╝ ██║╚══██╔══╝    ╚██╗ ██╔╝                         
+      /   |    \     ██║  ███╗██║   ██║        ╚████╔╝                          
+     /    o     \    ██║   ██║██║   ██║         ╚██╔╝                           
+    /    / \     \   ╚██████╔╝██║   ██║          ██║                            
+   /    /   o     \   ╚═════╝ ╚═╝   ╚═╝          ╚═╝                            
+   \    \         /   ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗              
+    \    \       /   ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗             
+     \    \     /    ██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝             
+      \    \   /     ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗             
+       \    \ /      ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝             
+        \    V        ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝              
+         \  /        ----------------------------------------------             
+          \/         Repositorio de notas, comandos y prácticas                 
+                                                                                
+================================================================================
+```
 
-Este es un repositorio para guardar los apuntes de un curso de GIT y GITHUB que termine en [platzi][1].
+# Bienvenidos a mi repositorio
 
+Este es un repositorio personal creado para guardar los apuntes, comandos y prácticas del [Curso Profesional de Git y GitHub][1] impartido en **Platzi**.
 
-### Encontrarás:
-- Conceptos basicos de git
-	 * ¿Que es un repositorio?
-	 * ¿Que son los estados de git?
-	 * ¿Que es un commit?
-	 etc..
-- Ejemplos de git merge
-- Ejemplos de pull request
-etc..
+## Contenido del repositorio
 
-
-
-[1]: https://platzi.com/cursos/git-github/ "git"
+* **Conceptos básicos de Git**
+  * ¿Qué es un sistema de control de versiones y qué es un repositorio?
+  * ¿Cuáles son los estados de los archivos en Git? (*Working directory*, *Staging area* y *Repository*).
+  * ¿Qué es un *commit* y cómo analizar cambios en el historial?
+* **Ramas y flujos de trabajo**
+  * Creación y manejo de ramas (*branches*).
+  * Ejemplos prácticos de fusión de ramas con `git merge` y resolución de conflictos.
+  * Uso de herramientas avanzadas como `git stash`, `git rebase` y `git cherry-pick`.
+* **Trabajo colaborativo con GitHub**
+  * Configuración de llaves SSH y sincronización con repositorios remotos (`push` y `pull`).
+  * Ejemplos de contribución mediante *Forks* y *Pull Requests*.
+  * Buenas prácticas con archivos `.gitignore` y `README.md`.: https://platzi.com/cursos/git-github/ "Curso Profesional de Git y GitHub en Platzi"
