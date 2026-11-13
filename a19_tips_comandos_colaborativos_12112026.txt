@@ -1,0 +1,42 @@
+═══════════════════════════════════════════════════════════════════════════════                                                                                                                                                                                                                                                                                                                                                
+          /\            ██████╗ ██╗████████╗    ██╗   ██╗                                                                                      
+         /  \          ██╔════╝ ██║╚══██╔══╝    ╚██╗ ██╔╝                                                                                      
+        /    \         ██║  ███╗██║   ██║        ╚████╔╝                                                                                       
+       / \    \        ██║   ██║██║   ██║         ╚██╔╝                                                                                        
+      /   \    \       ╚██████╔╝██║   ██║          ██║                                                                                         
+     /     O    \       ╚═════╝ ╚═╝   ╚═╝          ╚═╝                                                                                          
+    /      |\    \      ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗                                                                            
+   /       | \    \    ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗                                                                           
+   \       |  O   /    ██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝                                                                           
+    \      |     /     ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗                                                                           
+     \     O    /      ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝                                                                           
+      \        /        ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝                                                                            
+       \      /        ----------------------------------------------                                                                           
+        \    /         Apuntes: 12-11-2026                                                                                                                                                                        
+         \  /          Tema:    Comandos colaborativos                                                                                                                                                         
+          \/                                                                   
+                                                                                                                                   
+═══════════════════════════════════════════════════════════════════════════════                                                                                                                                                                                                                  
+#Como ver las estadisticas de commit para cada colaborador
+
+git shortlog -sn --all --no-marges
+
+
+#Crear alias para git:
+git config --global alias.Estadisticas "shortlog -sn --all --no-marges"
+
+#Ver como funciona un comando:
+git blame --help
+
+
+#Quie modifico un archivo en un archivo y en que rango.
+git blame css/estilos.css -L35,53
+
+#o para darle un poco de formato:
+git blame css/estilos.css -L35,53 -c
+
+
+
+
+
+

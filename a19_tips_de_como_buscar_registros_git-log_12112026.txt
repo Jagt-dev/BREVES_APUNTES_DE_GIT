@@ -1,0 +1,45 @@
+═══════════════════════════════════════════════════════════════════════════════
+                                                                                                                                   
+          /\            ██████╗ ██╗████████╗    ██╗   ██╗                                                 
+         /  \          ██╔════╝ ██║╚══██╔══╝    ╚██╗ ██╔╝                                                 
+        /    \         ██║  ███╗██║   ██║        ╚████╔╝                                                  
+       / \    \        ██║   ██║██║   ██║         ╚██╔╝                                                   
+      /   \    \       ╚██████╔╝██║   ██║          ██║                                                    
+     /     O    \       ╚═════╝ ╚═╝   ╚═╝          ╚═╝                                                    
+    /      |\    \      ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗                                      
+   /       | \    \    ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗                                     
+   \       |  O   /    ██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝                                     
+    \      |     /     ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗                                     
+     \     O    /      ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝                                     
+      \        /        ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝                                      
+       \      /        ----------------------------------------------                                     
+        \    /         Apuntes: 12-11-2026                                                                
+         \  /          Tema:    Como buscar registros con palabras clave usando: 
+          \/                    grep                                                                                    
+                                                                                                          
+═══════════════════════════════════════════════════════════════════════════════
+
+Es seguro que en algun momento vamos a necesitar revisar el registro de git log,
+algun archivo,mensaje etc... pero como a medida que el proyecto crece habrán demasiadas
+lineas que leer, por eso en linux hay un comando llamado "grep" que se usa para
+filtrar mediante palabras clave y opciones la salida de la terminal.
+
+
+#Buscar una palabra exacta en una vista compacta:
+git log --oneline | grep "login"
+
+#Ignorar mayúsculas y minúsculas (-i):
+git log --oneline | grep -i "fix"
+
+#Buscar en los mensajes de commit:
+git log --grep="palabra"
+
+#Combinarlo con vista de una sola línea:
+git log --oneline --grep="palabra" -i
+(Nos devuelve una lista limpia con el hash corto y el mensaje, ideal para copiar el ID).
+
+#Buscar cambios en el código:
+git log -S "calcularImpuesto" --oneline
+(Busca en todo el historial qué commits agregaron o eliminaron
+exactamente el texto calcularImpuesto dentro de los archivos)
+
